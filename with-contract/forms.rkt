@@ -76,6 +76,7 @@
       [(for/fold/contract (accum:ffc-accum ...) (clause:ffc-clause ...)
          body ... final-body:expr)
        #`(for/fold (accum.norm ...) (clause.norm ...)
+           clause.def ...
            body ...
            #,(syntax/loc #'final-body
                (with-contract for/fold/contract #:results (accum.c ...) final-body)))])))
